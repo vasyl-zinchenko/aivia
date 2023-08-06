@@ -1,17 +1,17 @@
 <script setup>
-import { ref, reactive, watch } from 'vue';
+import { ref, reactive, watch } from "vue";
 
-const sizeX = ref(4);
-const sizeY = ref(4);
+const sizeX = ref(5);
+const sizeY = ref(5);
 
-const array = reactive({value: Array(sizeX.value * sizeY.value)});
+const array = reactive({ value: Array(sizeX.value * sizeY.value) });
 
 watch([sizeX, sizeY], () => {
-    array.value = Array(sizeX.value * sizeY.value).fill(false);
+  array.value = Array(sizeX.value * sizeY.value).fill(false);
 });
 
 const toggleSquare = (index) => {
-    array.value[index] = !array.value[index];
+  array.value[index] = !array.value[index];
 };
 </script>
 
@@ -23,27 +23,38 @@ const toggleSquare = (index) => {
       <v-text-field v-model="sizeY" label="sizeY"></v-text-field>
     </v-form>
   </v-sheet>
-  <div
-    class="mt-10"
-    :style="{
-      display: 'grid',
-      placeItems: 'center',
-      gap: '5px',
-      gridTemplateColumns: `repeat(${sizeX}, 1fr)`,
-      background: 'black',
-      padding: '5px',
-    }"
+
+  <v-card
+    class="mx-auto pa-12 pb-8 mt-10"
+    elevation="8"
+    max-width="1200"
+    rounded="lg"
   >
-    <div
-      @mouseover="toggleSquare(index)"
-      :style="{
-        display: 'flex',
-        height: '36px',
-        width: '36px',
-        backgroundColor: square ? 'blue' : 'white',
-      }"
-      v-for="(square, index) in array.value"
-      :key="index"
-    ></div>
-  </div>
+    <div style="overflow-x: auto">
+      <div
+        class="mt-10"
+        :style="{
+          display: 'grid',
+          placeItems: 'center',
+          gap: '5px',
+          gridTemplateColumns: `repeat(${sizeX}, 1fr)`,
+          background: '#332f2f',
+          padding: '5px',
+        }"
+      >
+        <div
+          @mouseover="toggleSquare(index)"
+          :style="{
+            display: 'flex',
+            height: '36px',
+            width: '36px',
+            backgroundColor: square ? 'blue' : 'white',
+            margin: '16px',
+          }"
+          v-for="(square, index) in array.value"
+          :key="index"
+        ></div>
+      </div>
+    </div>
+  </v-card>
 </template>
