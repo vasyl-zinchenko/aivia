@@ -25,10 +25,11 @@ const toggleSquare = (index) => {
   </v-sheet>
 
   <v-card
-    class="mx-auto pa-12 pb-8 mt-10"
+    class="d-flex justify-center mx-auto pa-12 pb-8 mt-10 ml-10 mr-10"
     elevation="8"
-    max-width="1200"
+    max-width="100%"
     rounded="lg"
+    :style="{ background: '#332f2f' }"
   >
     <div style="overflow-x: auto">
       <div
@@ -38,21 +39,20 @@ const toggleSquare = (index) => {
           placeItems: 'center',
           gap: '5px',
           gridTemplateColumns: `repeat(${sizeX}, 1fr)`,
-          background: '#332f2f',
+
           padding: '5px',
         }"
       >
         <div
+          v-for="(square, index) in array.value"
+          :key="index"
           @mouseover="toggleSquare(index)"
           :style="{
-            display: 'flex',
             height: '36px',
             width: '36px',
             backgroundColor: square ? 'blue' : 'white',
             margin: '16px',
           }"
-          v-for="(square, index) in array.value"
-          :key="index"
         ></div>
       </div>
     </div>
