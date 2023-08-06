@@ -25,17 +25,20 @@ const v$ = useVuelidate(rules, formData);
 
 const submitForm = async () => {
   await v$.value.$validate();
-
+  
   if (!v$.value.$error) {
     router.push("/game");
-  } else {
-    console.log("There are validation errors!");
   }
 };
 </script>
 
 <template>
-  <v-card class="mx-auto pa-12 pb-8 mt-10" elevation="8" max-width="448" rounded="lg">
+  <v-card
+    class="mx-auto pa-12 pb-8 mt-10"
+    elevation="8"
+    max-width="448"
+    rounded="lg"
+  >
     <v-form fast-fail @submit.prevent>
       <div class="font-weight-light text-medium-emphasis">Email</div>
 
