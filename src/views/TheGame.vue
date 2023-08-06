@@ -51,7 +51,6 @@ const toggleSquare = (index) => {
             height: '36px',
             width: '36px',
             backgroundColor: square ? 'blue' : 'white',
-            margin: '16px',
           }"
         ></div>
       </div>
