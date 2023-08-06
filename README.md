@@ -1,44 +1,12 @@
-# default
+[DEMO LINK](https://tranquil-starship-8100ea.netlify.app/)
 
-## Project setup
+<h3>Try it Yourself</h3>
 
-```
-# yarn
-yarn
+- clone the forked repo to be running
+- open the project
 
-# npm
-npm install
+Then open a new terminal and enter:
 
-# pnpm
-pnpm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-# yarn
-yarn dev
-
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-```
-
-### Compiles and minifies for production
-
-```
-# yarn
-yarn build
-
-# npm
-npm run build
-
-# pnpm
-pnpm build
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).
+1. image_carousel_vue
+2. npm i
+3. npm run dev
